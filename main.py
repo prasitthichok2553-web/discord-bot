@@ -15,4 +15,9 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send("Pong! 🏓")
 
-bot.run(os.getenv("TOKEN"))
+TOKEN = os.getenv("TOKEN")
+
+if not TOKEN:
+    print("TOKEN not found")
+else:
+    bot.run(TOKEN)
